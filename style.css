@@ -1,0 +1,182 @@
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7fb;
+    color: #333;
+    line-height: 1.8;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #10233f, #2f6fed);
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+/* NAVIGATION */
+nav {
+    background-color: white;
+    padding: 15px;
+    text-align: center;
+
+    position: sticky;
+    top: 0;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+nav a {
+    text-decoration: none;
+    color: #2f6fed;
+    font-weight: bold;
+    margin: 0 20px;
+}
+
+nav a:hover {
+    color: #10233f;
+}
+
+/* MAIN */
+main {
+    max-width: 1000px;
+    min-height: 2200px;
+
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* SECTION */
+section {
+    background-color: white;
+
+    padding: 30px;
+    margin-bottom: 30px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* HEADING */
+h2 {
+    color: #2f6fed;
+    margin: 20px 0 15px;
+}
+
+/* PARAGRAPH */
+p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* FOOTER */
+footer {
+    background-color: #10233f;
+    color: white;
+
+    text-align: center;
+    padding: 25px;
+}
+
+/* BACK TO TOP */
+.back-to-top {
+    position: fixed;
+
+    bottom: 30px;
+    right: 30px;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #2f6fed;
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 25px;
+    font-weight: bold;
+
+    border-radius: 50%;
+
+    /* Transparansi awal */
+    opacity: 0;
+
+    /* Tombol tidak dapat diklik saat tersembunyi */
+    visibility: hidden;
+
+    /* Animasi scroll CSS */
+    animation: show-button linear both;
+
+    animation-timeline: scroll(root);
+    animation-range: 0px 500px;
+
+    transition: opacity 0.3s, transform 0.3s;
+
+    z-index: 1000;
+}
+
+/* ANIMATION */
+@keyframes show-button {
+
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    1% {
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 0.5;
+        visibility: visible;
+    }
+
+}
+
+/* HOVER */
+.back-to-top:hover {
+    opacity: 1;
+
+    transform: translateY(-5px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav a {
+        margin: 0 8px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .back-to-top {
+        right: 20px;
+        bottom: 20px;
+    }
+
+}
